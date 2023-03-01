@@ -1,7 +1,5 @@
 library(pacman)
-pacman::p_load(vroom, devtools, knitr, magrittr, dplyr, stringr, tidyr, ggplot2, text2vec, tm, tidytext, 
-               stringr, stringi, SnowballC, stopwords, wordcloud, prettydoc, cowplot, kable, 
-               utf8, corpus, glue, topicmodels, stm, wordcloud2, htmlwidgets, viridis, qdapRegex, stringi)
+pacman::p_load(dplyr, stringr, tidyr, qdapRegex, stringi)
 
 current_path = rstudioapi::getActiveDocumentContext()$path
 setwd(dirname(current_path ))

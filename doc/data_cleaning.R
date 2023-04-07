@@ -5,6 +5,9 @@ library(dplyr)
 library(tm) # for text mining
 library(SnowballC) # for stemming
 library(stringr) # for string manipulation
+#install.packages("tidytext")
+library(tidytext)
+library(tidyr)
 
 current_path = rstudioapi::getActiveDocumentContext()$path
 setwd(dirname(current_path ))
@@ -53,6 +56,7 @@ clean_text <- function(text) {
 # Apply cleaning function to text column
 df$dialogue<- iconv(df$dialogue, from = 'ISO-8859-1', to = 'utf8')
 df$dialogue_cleaned <- sapply(df$dialogue, clean_text)
+class(df$dialogue_cleaned)
 
 write.csv(df, "../data/cleaned_nlp.csv", row.names=FALSE)
 
